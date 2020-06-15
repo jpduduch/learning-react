@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+
+let marker = 'X'
 
 class Square extends React.Component {
 	constructor(props){
-		super(props);
+		super(props)
 
 		this.state = {
 			value: null,
@@ -14,7 +16,7 @@ class Square extends React.Component {
 		return (
 			<button
 				className="square"
-				onClick={() => this.setState({value: 'X'}) }
+				onClick={() => {this.setState({value: marker});  marker = 'O'  } }
 			>
 				{this.state.value}
 			</button>
@@ -28,7 +30,7 @@ class Board extends React.Component {
 	}
 
 	render() {
-		const status = 'Next player: X';
+		const status = 'Next player: ' + marker;
 
 		return (
 			<div>
