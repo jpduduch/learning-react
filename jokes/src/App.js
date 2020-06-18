@@ -4,10 +4,12 @@ import Joke from './components/Joke'
 import jokesData from './content/jokesData'
 
 function App() {
-	const jokeComponents = jokesData.map(joke => <Joke key={joke.id} question={joke.question} answer={joke.answer} />)
+	const jokeComponents = jokesData.map(arr => <Joke key={arr.id} question={arr.question} answer={arr.answer} />)
 	// essa linha acima é uma versão curta de:
 	// const jokeComponents = jokesData.map(function(joke){
-	// 	<Joke key={joke.id} question={joke.question} answer={joke.answer} />
+		// 	return(
+		// 		<Joke key={joke.id} question={joke.question} answer={joke.answer} />
+		// 	)
 	// })
 
 	return(
